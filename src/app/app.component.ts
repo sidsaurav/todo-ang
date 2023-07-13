@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import Todo from "./Todo"
+import dummyData from './dummyData';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   title:string = 'To Do Angular <3'
   newItemData:string = ""
   newItemDueDate:Date = new Date()
-  items:Todo[] = []
+  items:Todo[] = dummyData
   
   addItem() {
 
