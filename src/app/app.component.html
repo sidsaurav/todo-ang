@@ -1,46 +1,4 @@
 <div class="flex flex-col items-center mt-8 gap-y-7">
-    <h1 class="text-[60px] borde-2 borde-red-400">Todo List App</h1>
-    <div class="borde-2 borde-red-400">
-        <input [(ngModel)]="newItemData" (keyup.enter)="addItem()" type="text" placeholder="Type here"
-            class="input input-bordered input-md mr-2" />
-        <button (click)="addItem()" class="btn btn-outline btn-info">Add!</button>
-    </div>
-
-    <!-- <div class="borde-2 borde-red-400">
-        <ul>
-            <li *ngFor="let item of itemArray">
-                <span>{{item}}</span>
-            </li>
-        </ul>
-    </div> -->
-
-    <div class="overflow-x-auto">
-        <table class="table">
-            <!-- head -->
-            <thead>
-                <tr>
-                    <th>Done</th>
-                    <th>Task</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of items">
-                    <td><input type="checkbox" class="checkbox" /></td>
-                    <td>{{item.data}}</td>
-                    <td>
-                        <div class="badge badge-warning gap-2">
-                            {{item.status}}
-                        </div>
-                    </td>
-                    <td>
-                        <button class="btn btn-default btn-sm mr-2">Edit</button>
-                        <button (click)="deleteItem(item.id)" class="btn btn-error btn-sm">Delete</button>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
+    <app-title />
+    <router-outlet />
 </div>

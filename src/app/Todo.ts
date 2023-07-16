@@ -1,8 +1,9 @@
 interface Todo {
-    id: number;
-    data: string;
-    status: string;
-    due_date: Date;
+  id: number;
+  title: string;
+  desc: string;
+  status: Boolean;
+  due_date: Date;
 }
 
 export default Todo;
