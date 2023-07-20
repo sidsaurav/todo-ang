@@ -12,13 +12,13 @@ export class ItemsService {
   }
 
   addItem(item: Todo) {
-    this.itemsArr.push(item);
+    this.itemsArr.splice(this.itemsArr.length, 0, item);
   }
 
-  removeItem(id: number) {
-    if (confirm('Are you sure you want to delete this item?')) {
-      this.itemsArr = this.itemsArr.filter((item) => item.id !== id);
-    }
+  removeItem() {
+    this.itemsArr = this.itemsArr.filter(
+      (item) => item.id !== this.itemIdToBeDeleted
+    );
   }
 
   getItembyId(id: number) {
@@ -29,9 +29,16 @@ export class ItemsService {
     return this.itemsArr.length;
   }
 
-  updateItem(id: number, title: string, desc: string, due_date: Date) {
-    this.itemsArr[id].title = title;
-    this.itemsArr[id].desc = desc;
-    this.itemsArr[id].due_date = due_date;
+  updateItem(itemToBeUpdated: any) {
+    const { itemId, newTitle, newDesc, newDueDate } = itemToBeUpdated;
+    this.itemsArr[itemId].title = newTitle;
+    this.itemsArr[itemId].desc = newDesc;
+    this.itemsArr[itemId].due_date = newDueDate;
+  }
+
+  itemIdToBeDeleted: number = -1;
+
+  updateItemIdToBeDeleted(id: number) {
+    this.itemIdToBeDeleted = id;
   }
 }

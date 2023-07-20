@@ -1,14 +1,5 @@
-<div class="flex flex-col items-center">
-    <div class="borde-2 borde-red-400">
-        <input [(ngModel)]="newItemTitle" (keyup.enter)="addItem()" type="text" placeholder="New Title"
-            class="input input-bordered input-md mr-2" />
-        <input [(ngModel)]="newItemDesc" (keyup.enter)="addItem()" type="text" placeholder="New Description"
-            class="input input-bordered input-md mr-2" />
-        <input [(ngModel)]="newItemDueDate" (keyup.enter)="addItem()" type="date" placeholder="New Due Date"
-            class="input input-bordered input-md mr-2" />
-        <button (click)="addItem()" class="btn btn-outline btn-info">Add!</button>
-    </div>
-
+<div class="flex flex-col items-center gap-8">
+    <button (click)="goToAddItem()" class="btn btn-outline btn-info">Add new item!</button>
 
     <div class="overflow-x-auto">
         <table class="table">
@@ -35,10 +26,13 @@
                     </td>
                     <td>
                         <button [routerLink]="['/edit', item.id]" class="btn btn-default btn-sm mr-2">Edit</button>
-                        <button (click)="deleteItem(item.id)" class="btn btn-error btn-sm">Delete</button>
+                        <button id="btnDel" (click)="items.updateItemIdToBeDeleted(item.id)"
+                            class="btn btn-error btn-sm btnDel">Delete</button>
                     </td>
                 </tr>
 
             </tbody>
         </table>
+        <app-dialog-box *ngIf="this.items.itemIdToBeDeleted !== -1"></app-dialog-box>
     </div>
+</div>

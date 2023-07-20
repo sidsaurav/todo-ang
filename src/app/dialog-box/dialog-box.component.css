@@ -1,0 +1,31 @@
+#modalContainer {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#modalContent {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #888;
+    transform: translateX(calc(50vw - 175px)) translateY(calc(50vh - 89px));
+    width: 350px;
+    height: 178px;
+    border-radius: 5px;
+}
+
+.closeBtn {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: #000;
+}

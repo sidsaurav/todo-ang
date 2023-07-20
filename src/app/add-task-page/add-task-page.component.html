@@ -1,0 +1,19 @@
+<div class="form-control w-full max-w-xs">
+    <button routerLink="/home" class="mb-6 btn btn-neutral">Go back!</button>
+
+    <label class="label">
+        <span class="label-text">New title here</span>
+    </label>
+    <input [(ngModel)]="newItemTitle" type="text" value="" placeholder="Type here"
+        class="input input-bordered w-full max-w-xs mb-6" />
+    <label class="label">
+        <span class="label-text">New description here</span>
+    </label>
+    <textarea [(ngModel)]="newItemDesc" class="textarea textarea-bordered mb-6" placeholder="Type here"></textarea>
+    <label class="label">
+        <span class="label-text">New due date</span>
+    </label>
+    <input [(ngModel)]="newItemDueDate" type="date" placeholder="New Due Date"
+        class="mb-6 input input-bordered input-md mr-2" />
+    <button (click)="addItem()" class="btn btn-success w-1/3">Save!</button>
+</div>

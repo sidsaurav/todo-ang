@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import Todo from '../Todo';
 import dummyData from '../dummyData';
 import { ItemsService } from '../services/items.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,39 +10,15 @@ import { ItemsService } from '../services/items.service';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent {
-  constructor(public items: ItemsService) {}
+  constructor(public items: ItemsService, public router: Router) {}
 
-  newItemTitle: string = '';
-  newItemDesc: string = '';
-  newItemDueDate: Date = new Date();
-  //   items: Todo[] = dummyData;
-
-  addItem() {
-    if (
-      this.newItemTitle === '' ||
-      this.newItemDesc === '' ||
-      this.newItemDueDate === null
-    ) {
-      alert('Please fill out all fields');
-      return;
-    }
-    const newItem: Todo = {
-      id: this.items.length(),
-      title: this.newItemTitle,
-      desc: this.newItemDesc,
-      //   status: Date.now() > this.newItemDueDate.getTime() ? 'late' : 'pending',
-      status: false,
-      due_date: new Date(this.newItemDueDate),
-    };
-
-    console.log(newItem);
-    this.items.addItem(newItem);
-    this.newItemTitle = '';
-    this.newItemDesc = '';
-    this.newItemDueDate = new Date();
+  goToAddItem() {
+    this.router.navigateByUrl('/add');
   }
 
   deleteItem(id: number) {
-    this.items.removeItem(id);
+    if (document !== null && document.querySelector('app-dilog-box') !== null) {
+      //   document.querySelector('app-dilog-box').style.display = 'block';
+    }
   }
 }
