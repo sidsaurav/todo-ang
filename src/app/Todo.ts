@@ -3,7 +3,7 @@ interface Todo {
   title: string;
   desc: string;
   status: Boolean;
-  due_date: Date;
+  dueDate: Date;
 }
 
 export default Todo;

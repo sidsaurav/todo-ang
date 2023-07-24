@@ -1,7 +1,14 @@
-<div id="modalContainer">
-    <div id="modalContent" class="flex flex-col gap-4 items-center justify-center">
-        <span class="closeBtn" id="closeModal">&times;</span>
-        <p>Are you sure you want to delete this item?</p>
-        <button (click)="deleteItem()" class="btn btn-error w-1/3">Yes!</button>
+<div #main (click)="hideChild()" id="modalContainer">
+    <div #sub id="modalContent" class="flex flex-col">
+        <div class="flex justify-end" id="closeModal">
+            <div class="closeBtn" (click)="this.itemIdToBeDeletedChange.emit(-1)">&times;</div>
+        </div>
+        <div class="mt-2 flex flex-col gap-4">
+            <p>Are you sure you want to delete this item?</p>
+            <button (click)="deleteItem()" class="btn btn-error w-1/3">Yes!</button>
+        </div>
+
     </div>
 </div>
+
+{{itemIdToBeDeleted}}

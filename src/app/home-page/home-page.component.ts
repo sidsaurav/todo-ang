@@ -21,4 +21,7 @@ export class HomePageComponent {
       //   document.querySelector('app-dilog-box').style.display = 'block';
     }
   }
+
+  public itemIdToBeDeleted: number = -1;
+  myScore = 0;
 }

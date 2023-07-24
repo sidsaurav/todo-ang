@@ -29,7 +29,7 @@ export class EditPageComponent implements OnInit {
       if (item) {
         this.newTitle = item.title;
         this.newDesc = item.desc;
-        this.newDueDate = item.due_date;
+        this.newDueDate = item.dueDate;
       }
     });
   }

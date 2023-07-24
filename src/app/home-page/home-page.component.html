@@ -21,18 +21,19 @@
                     <td>
                         <div class="badge badge-neutral gap-2">
                             {{item.status && 'Done' || 'Pending'}}
-                            {{item.due_date.getDate()}}/{{item.due_date.getMonth()}}/{{item.due_date.getFullYear()}}
+                            {{item.dueDate.getDate()}}/{{item.dueDate.getMonth()}}/{{item.dueDate.getFullYear()}}
                         </div>
                     </td>
                     <td>
                         <button [routerLink]="['/edit', item.id]" class="btn btn-default btn-sm mr-2">Edit</button>
-                        <button id="btnDel" (click)="items.updateItemIdToBeDeleted(item.id)"
+                        <button id="btnDel" (click)="this.itemIdToBeDeleted = item.id"
                             class="btn btn-error btn-sm btnDel">Delete</button>
                     </td>
                 </tr>
 
             </tbody>
         </table>
-        <app-dialog-box *ngIf="this.items.itemIdToBeDeleted !== -1"></app-dialog-box>
+        <app-dialog-box [(itemIdToBeDeleted)]="itemIdToBeDeleted"
+            *ngIf="this.itemIdToBeDeleted !== -1"></app-dialog-box>
     </div>
 </div>

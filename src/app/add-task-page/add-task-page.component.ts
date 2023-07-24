@@ -31,7 +31,7 @@ export class AddTaskPageComponent {
       desc: this.newItemDesc,
       //   status: Date.now() > this.newItemDueDate.getTime() ? 'late' : 'pending',
       status: false,
-      due_date: new Date(this.newItemDueDate),
+      dueDate: new Date(this.newItemDueDate),
     };
 
     console.log(newItem);
