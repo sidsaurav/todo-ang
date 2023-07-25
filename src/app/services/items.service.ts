@@ -7,17 +7,19 @@ import dummyData from '../dummyData';
 })
 export class ItemsService {
   public itemsArr: Todo[] = [];
+  nextItemID;
   constructor() {
     this.itemsArr = dummyData;
+    this.nextItemID = this.itemsArr.length;
   }
-
   addItem(item: Todo) {
     this.itemsArr.splice(this.itemsArr.length, 0, item);
+    this.nextItemID++;
   }
 
   getItembyId(id: number) {
     return this.itemsArr.find((item) => item.id === id);
-  } 
+  }
 
   updateItem(itemToBeUpdated: any) {
     const { itemId, newTitle, newDesc, newDueDate } = itemToBeUpdated;

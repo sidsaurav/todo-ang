@@ -17,8 +17,11 @@ export class HomePageComponent {
   }
 
   deleteItem(id: number) {
-    if (document !== null && document.querySelector('app-dilog-box') !== null) {
-      //   document.querySelector('app-dilog-box').style.display = 'block';
+    if (
+      document !== null &&
+      document.querySelector('app-dialog-box') !== null
+    ) {
+      //   document.querySelector('app-dialog-box').style.display = 'block';
     }
   }
 
