@@ -7,11 +7,10 @@ import dummyData from '../dummyData';
 })
 export class ItemsService {
   public itemsArr: Todo[] = [];
-  nextItemID;
   constructor() {
     this.itemsArr = dummyData;
-    this.nextItemID = this.itemsArr.length;
   }
+  nextItemID = 100;
   addItem(item: Todo) {
     this.itemsArr.splice(this.itemsArr.length, 0, item);
     this.nextItemID++;

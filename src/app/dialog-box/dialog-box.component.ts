@@ -36,7 +36,7 @@ export class DialogBoxComponent {
 
   deleteItem() {
     this.items.itemsArr = this.items.itemsArr.filter(
-      (data, id) => id !== this.itemIdToBeDeleted
+      (data) => data.id !== this.itemIdToBeDeleted
     );
     this.itemIdToBeDeletedChange.emit(-1);
   }

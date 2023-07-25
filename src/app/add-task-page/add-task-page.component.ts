@@ -26,7 +26,7 @@ export class AddTaskPageComponent {
       return;
     }
     const newItem: Todo = {
-      id: this.items.itemsArr.length,
+      id: this.items.nextItemID,
       title: this.newItemTitle,
       desc: this.newItemDesc,
       //   status: Date.now() > this.newItemDueDate.getTime() ? 'late' : 'pending',
